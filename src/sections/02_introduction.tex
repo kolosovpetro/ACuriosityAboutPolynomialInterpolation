@@ -1,12 +1,12 @@
-Back then, in 2016 being a student at the faculty of mechanical engineering,
-I remember myself playing with finite differences of the polynomial $n^3$ over the domain of natural numbers $n\in\mathbb{N}$
-having at most $0 \leq n \leq 20$ values.
-Looking to the values in my finite difference tables, the first and very naive question that came to my mind was
-\begin{question}
-    Is it possible to re-assemble the value of the polynomial $n^3$ backwards
-    having its finite differences?
-\end{question}
-The answer to this question is definitely \textit{Yes}, by utilizing certain interpolation principles.
+%Back then, in 2016 being a student at the faculty of mechanical engineering,
+%I remember myself playing with finite differences of the polynomial $n^3$ over the domain of natural numbers $n\in\mathbb{N}$
+%having at most $0 \leq n \leq 20$ values.
+%Looking to the values in my finite difference tables, the first and very naive question that came to my mind was
+%\begin{question}
+%    Is it possible to re-assemble the value of the polynomial $n^3$ backwards
+%    having its finite differences?
+%\end{question}
+%The answer to this question is definitely \textit{Yes}, by utilizing certain interpolation principles.
 Interpolation is a process of finding new data points based on the range of a discrete set of known data points.
 Interpolation has been well-developed in between 1674--1684
 by Issac Newton's fundamental works, nowadays known as foundation of classical interpolation
@@ -18,5 +18,72 @@ formula myself, fueled by purest passion and feeling of mystery.
 \textit{All the mathematical laws and relations exist from the very beginning, we only reveal and describe them},
 I thought.
 That mindset truly inspired me, so my own mathematical journey has been started.
-Let's begin considering the table of finite differences of integer cubes $n^3$
+Consider finite differences of cubes $n^3$
 \input{sections/figures/01_fig_finite_differences_cubes}
+The problem of interpolation of polynomials is a classical problem in mathematics and has been widely studied in literature.
+For instance, Concrete mathematics~\cite{graham1989concrete} gives interpolation of cubes by using
+Newton's interpolation formula
+\[
+    n^3 = 6 \binom{n}{3} + 6 \binom{n}{2} + \binom{n}{1} + 0 \binom{n}{0}
+\]
+because
+\begin{align*}
+    f(x) = \Delta^{d} f(0) \binom{x}{d} +  \Delta^{d-1} f(0) \binom{x}{d-1} + \cdots + f(0) \binom{x}{0}
+    = \sum_{r=0}^{d} \Delta^{d-r} f(0) \binom{x}{r}
+\end{align*}
+However, interpolation of cubes can be also done in a different way.
+The key point that interpolation formula above iterates over the finite difference of order $d$,
+instead it is clear that $n^3$ can be reached as a sum of finite difference $\Delta^1$ of first order
+\begin{align*}
+    n^3 = \Delta 0^3 + \Delta 1^3 + \Delta 2^3 + \cdots + \Delta (n-1)^3 = \sum_{k=0}^{n-1} \Delta k^3
+\end{align*}
+We know that $\Delta^3 n^3 = 6$ is the constant for each $n$.
+The second difference of cubes $\Delta^2 n^3$ is a linear relation in terms of third order finite difference
+$\Delta^3 n^3$.
+\begin{align*}
+    \Delta^2 n^3 = (n+1) \Delta^3 n^3 = 6(n+1)
+\end{align*}
+Finally, the first order finite difference $\Delta n^3$ is the following relation in terms of second
+order finite difference
+\begin{align*}
+    \Delta n^3 = \Delta 0^3 + \Delta^2 (n-1)^3 = 1 + \Delta^2 (n-1)^3 = 1 + 6(n-1)
+\end{align*}
+Meaning that
+\begin{align}
+    \label{eq:cubes_interpolation}
+    \begin{split}
+        \Delta(0^3) &= 1+6 \cdot 0 \\
+        \Delta(1^3) &= 1+6\cdot0+6\cdot1 \\
+        \Delta(2^3) &= 1+6\cdot0+6\cdot1+6\cdot2 \\
+        \Delta(3^3) &= 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3
+    \end{split}
+\end{align}
+Finally reaching its generic form
+\begin{equation}
+    \Delta(n^3) = 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3+\cdots+6\cdot n = 1 + 6 \sum_{k=0}^{n} k
+    \label{eq:general-cube-eq}
+\end{equation}
+Because
+\begin{align*}
+    \Delta(n^3) = \Delta (n-1)^3 + \Delta^2 (n-1)^3
+\end{align*}
+Having the relation $n^3 = \Delta 0^3 + \Delta 1^3 + \Delta 2^3 + \cdots + \Delta (n-1)^3$,
+we get
+\begin{align}
+    \label{eq:rearrangement_to_get_cubes}
+    n^3 &= [1+6\cdot0]+[1+6\cdot0+6\cdot1]+[1+6\cdot0+6\cdot1+6\cdot2]+\cdots \nonumber \\
+    &+[1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)]
+\end{align}
+By rearranging the terms of equation~\eqref{eq:rearrangement_to_get_cubes} it turns into summation
+in terms of $k (n-k)$
+\begin{equation*}
+    \begin{split}
+        n^3 &= n + [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] + \cdots \\
+        &\cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)]
+    \end{split}
+\end{equation*}
+Giving an identity for cubes $n^3$
+\begin{equation}
+    \label{eq:cube_identity}
+    n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
+\end{equation}

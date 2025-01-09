@@ -8,4 +8,9 @@
 \newblock
   \url{https://infoscience.epfl.ch/record/63085/files/meijering0201.pdf}.
 
+\bibitem{graham1989concrete}
+Ronald~L. Graham, Donald~E. Knuth, Oren Patashnik, and Stanley Liu.
+\newblock Concrete mathematics: a foundation for computer science.
+\newblock {\em Computers in Physics}, 3(5):106--107, 1989.
+
 \end{thebibliography}
