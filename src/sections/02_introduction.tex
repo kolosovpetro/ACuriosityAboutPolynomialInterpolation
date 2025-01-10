@@ -3,12 +3,14 @@ Interpolation has been well-developed in between 1674--1684
 by Issac Newton's fundamental works, nowadays known as foundation of classical interpolation
 theory~\cite{meijering2002chronology}.
 
-At that time, in 2016, I was a first-year mechanical engineering undergraduate,
-so that due to lack of knowledge and perspective of view I started re-inventing interpolation
-formula myself, fueled by purest passion and feeling of mystery.
-\textit{All the mathematical laws and relations exist from the very beginning, we only reveal and describe them},
+The first time I found interpolation interesting was in 2016 when I observed a table of finite differences of cubes.
+Back then, I was a first-year mechanical engineering undergraduate.
+Due to my lack of mathematical knowledge, I started re-inventing interpolation
+formulas myself, fueled by pure passion and a sense of mystery.
+\textit{All the mathematical laws and relations exist from the very beginning; we only reveal and describe them},
 I thought.
-That mindset truly inspired me, so my own mathematical journey has been started.
+That mindset truly inspired me, and thus, my own mathematical journey began.
+
 Consider finite differences of cubes $n^3$
 \input{sections/figures/01_fig_finite_differences_cubes}
 The problem of interpolation of polynomials is a classical problem in mathematics and has been widely studied in literature.
@@ -97,14 +99,14 @@ Let be $P(n, q) = \sum_{k=0}^{q-1} 6k(n-k) + 1$ and $Q(n, q) = \sum_{k=1}^{q} 6k
         q = 3: & -81 + 36 n
     \end{cases}
 \end{align*}
-Now let's take a breath and briefly summarize all the results we got so far.
-So, we have successfully interpolated the polynomial $n^3$ using discrete set of finite differences data points,
-by expressing its first order finite difference as $\Delta n^3 = 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3+\cdots+6\cdot n$,
-so that $n^3$ is a sum of $\Delta n^3$.
-By rearranging the terms we got $n^3 = n + [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2]
-+ \cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)]$, leading to identities in terms of cubes
-\begin{align*}
-    n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1; \quad \quad n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
-\end{align*}
-Indeed, summation bounds of above identities can be altered because $T(n,k) = 6k(n-k) + 1$
-is symmetric $T(n,k) = T(n,n-k)$.
+%Now let's take a breath and briefly summarize all the results we got so far.
+%So, we have successfully interpolated the polynomial $n^3$ using discrete set of finite differences data points,
+%by expressing its first order finite difference as $\Delta n^3 = 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3+\cdots+6\cdot n$,
+%so that $n^3$ is a sum of $\Delta n^3$.
+%By rearranging the terms we got $n^3 = n + [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2]
+%+ \cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)]$, leading to identities in terms of cubes
+%\begin{align*}
+%    n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1; \quad \quad n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
+%\end{align*}
+%Indeed, summation bounds of above identities can be altered because $T(n,k) = 6k(n-k) + 1$
+%is symmetric $T(n,k) = T(n,n-k)$.
