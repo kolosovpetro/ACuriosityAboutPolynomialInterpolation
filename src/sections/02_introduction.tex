@@ -33,10 +33,9 @@ Alternatively, we can interpolate cubes $n^3$ as a sum of first order finite dif
 We know that $\Delta^3 n^3 = 6$ is the constant for each $n$.
 The second difference of cubes $\Delta^2 n^3$ is a linear relation in terms of third order finite difference
 $\Delta^3 n^3$
-\begin{align*}
-    \label{eq:second-difference-linear-relation}
+\begin{align}
     \Delta^2 n^3 = (n+1) \Delta^3 n^3 = 6(n+1)
-\end{align*}
+\end{align}
 Finally, the first order finite difference $\Delta n^3$ is the following relation in terms of second
 order finite difference
 \begin{align*}
@@ -44,7 +43,6 @@ order finite difference
 \end{align*}
 Altering summation bounds yields
 \begin{align*}
-    \label{eq:first-difference-in-terms-of-second-difference}
     \Delta n^3 = 1+6\cdot0+6\cdot1+6\cdot2+6\cdot3+\cdots+6\cdot n = 1 + 6 \sum_{k=0}^{n} k
 \end{align*}
 Therefore, we are able to express first order finite difference of cubes in form of sums as follows
@@ -62,10 +60,11 @@ we get
     &+ \cdots + [1+6\cdot0+6\cdot1+6\cdot2+\cdots+6\cdot(n-1)]
 \end{align*}
 By rearranging the terms of the equation above, we get summation in terms of $k (n-k)$
-\begin{align*}
-    n^3 = n &+ [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] \\
+\begin{align}
+    \label{eq:rearranged-cubes}
+    n^3 = n &+ [(n-0) \cdot 6 \cdot 0] + [(n-1)\cdot6\cdot1] + [(n-2)\cdot6\cdot2] \nonumber \\
     &+ \cdots + [(n-k)\cdot 6 \cdot k] + \cdots + [1\cdot6\cdot(n-1)]
-\end{align*}
+\end{align}
 By applying compact sigma sum notation yields an identity for cubes $n^3$
 \begin{align*}
     n^3 = n + \sum_{k=0}^{n-1} 6k(n-k)
