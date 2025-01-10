@@ -1,4 +1,4 @@
-# A question about Polynomial Interpolation
+# A curiosity about Polynomial Interpolation
 
 ## GitHub Actions used
 
