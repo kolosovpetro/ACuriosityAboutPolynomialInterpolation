@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-BeginPackage["GithubLatexTemplateMathematicaPackage`"]
+BeginPackage["ACuriosityAboutPolynomialInterpolation`"]
 
 A::usage= "A[n, k] returns the real coefficient A of non-negative integers n, k such that n <= k. 
 See https://kolosovpetro.github.io/pdf/AStudyOnDynamicEquations.pdf."
@@ -8,6 +8,7 @@ See https://kolosovpetro.github.io/pdf/AStudyOnDynamicEquations.pdf."
 L::usage= "L[m, n, k] returns the polynomial L of integers m, n, k. See https://kolosovpetro.github.io/pdf/AStudyOnDynamicEquations.pdf."
 
 P::usage= "P[m, x, b] returns the polynomial P of m, x and b. See https://kolosovpetro.github.io/pdf/AStudyOnDynamicEquations.pdf."
+Q::usage= "Q[m, x, b] returns the polynomial P of m, x and b. See https://kolosovpetro.github.io/pdf/AStudyOnDynamicEquations.pdf."
 
 sigma::usage= "Forward jump operator on time scales."
 
@@ -35,6 +36,7 @@ A[n_, k_] := (2n + 1) * Binomial[2n, n] /; k == n;
 
 L[m_, n_, k_] := Sum[A[m, r] * k^r * (n - k)^r, {r, 0, m}];
 P[m_, n_, b_] := Sum[L[m, n, k], {k, 0, b - 1}];
+Q[m_, n_, b_] := Sum[L[m, n, k], {k, 1, b}];
 
 sigma[x_] := Global`q * x ^ Global`j;
 
@@ -53,4 +55,7 @@ theorem[m_] := Expand[timeScaleDerivativeX[m, Global`x, sigma[Global`x]] + timeS
 End[ ]
 
 EndPackage[ ]
+
+
+
 
