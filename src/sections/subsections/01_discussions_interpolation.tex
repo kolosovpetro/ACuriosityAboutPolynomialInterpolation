@@ -1,0 +1,30 @@
+﻿\subsection{Interpolation}\label{subsec:interpolation}
+Current manuscript starts from certain polynomial technique shown on base case of cubes, where the key
+identity is the tricky rearrangement of terms
+in the sum $n^3=\sum_{k=0}^{n-1} \Delta k^3$ in~\eqref{eq:rearranged-cubes}.
+This rearrangement was done instead of applying Faulhaber's formula on $\Delta n^3 = 1 + 6\sum_{k=1}^{n} k$ which
+leads to well-known result involving Binomial theorem:
+$\Delta n^3 = 1 + 6\sum_{k=1}^{n} k = 1 + 6 \frac{1}{2}(n+n^2) = 1 + 3n^3 + 3n$.
+%The main question now is: Can we consider the process of finding identities for cubes
+%~\eqref{eq:move-n-under-sigma},~\eqref{eq:alter-summation-bounds} as an interpolation method?
+In context of rearrangement~\eqref{eq:rearranged-cubes} and moving $n$ under summation~\eqref{eq:move-n-under-sigma}
+\begin{question}
+    \label{question:interpolation_odd_power}
+    Can we consider the process of finding identities for cubes
+    ~\eqref{eq:move-n-under-sigma},~\eqref{eq:alter-summation-bounds} as an interpolation method?
+\end{question}
+
+The steps~\eqref{eq:rearranged-cubes} and~\eqref{eq:move-n-under-sigma} is the only distinct from well-known
+result
+\begin{align*}
+    n^3 = \sum_{k=0}^{n-1} \sum_{r=0}^{2} \binom{3}{r} k^r
+\end{align*}
+Instead, we arrived to identities
+\begin{align*}
+    n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1; \quad \quad n^3 = \sum_{k=1}^{n} 6k(n-k) + 1
+\end{align*}
+\begin{question}
+    \label{question:interpolation_generalization}
+    Assuming that question~\eqref{question:interpolation_odd_power} is true,
+    can we consider the conjecture~\eqref{conj:generalization} as an interpolation method for odd powers?
+\end{question}
