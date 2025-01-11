@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: E:\RiderProjects\04_LATEX\ACuriosityAboutPolynomialInterpolation\out/ACuriosityAboutPolynomialInterpolation.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 39 items.
+Database file #1: ACuriosityAboutPolynomialInterpolation.bib
+You've used 18 entries,
+            1791 wiz_defined-function locations,
+            550 strings with 7055 characters,
+and the built_in function-call counts, 2701 in all, are:
+= -- 241
+> -- 72
+< -- 1
++ -- 36
+- -- 18
+* -- 77
+:= -- 428
+add.period$ -- 59
+call.type$ -- 18
+change.case$ -- 16
+chr.to.int$ -- 0
+cite$ -- 18
+duplicate$ -- 115
+empty$ -- 341
+format.name$ -- 18
+if$ -- 621
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 8
+newline$ -- 98
+num.names$ -- 18
+pop$ -- 92
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 52
+stack$ -- 0
+substring$ -- 75
+swap$ -- 19
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 24
+width$ -- 20
+write$ -- 196

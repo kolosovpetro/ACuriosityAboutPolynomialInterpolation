@@ -1,0 +1,56 @@
+﻿Assume that our previously obtained identities
+$n^3 = \sum_{k=0}^{n-1} 6k(n-k) + 1$ and $n^3 = \sum_{k=1}^{n} 6k(n-k) + 1$
+have explicit form as follows
+\begin{align*}
+    n^3 = \sum_{k} \coeffA{1}{1} k^1(n-k)^1 + \coeffA{1}{0} k^0(n-k)^0
+\end{align*}
+where $\coeffA{1}{1} = 6$ and $\coeffA{1}{0} = 1$, respectively.
+Therefore, let be a conjecture
+\begin{conjecture}
+    \label{conj:generalization}
+    For every $n\geq 1, \; n,m\in\mathbb{N}$ there are coefficients $\coeffA{m}{0}, \coeffA{m}{1}, \ldots, \coeffA{m}{m}$ such that
+    \begin{align*}
+        n^{2m+1} = \sum_{k=1}^{n} \coeffA{m}{0} k^0 (n-k)^0 + \coeffA{m}{1} (n-k)^1
+        + \cdots + \coeffA{m}{m} k^m (n-k)^m
+    \end{align*}
+\end{conjecture}
+Note that conjecture above assumes the convention $0^0=1$,
+reader may found a comprehensive discussion of it in~\cite{knuth1992two}.
+
+Long story short, above conjecture is true, so that real coefficients $\coeffA{m}{r}$ are following
+\input{sections/figures/05_fig_coefficients_a}
+These coefficients $\coeffA{m}{r}$ are defined via a recurrence relation involving Binomial coefficients
+and Bernoulli numbers
+\begin{definition} (Definition of coefficient $\coeffA{m}{r}$.)
+    \begin{align*}
+        \label{eq:definition_coefficient_a}
+        \coeffA{m}{r} =
+        \begin{cases}
+        (2r+1)
+            \binom{2r}{r} & \mathrm{if} \; r=m \\
+            (2r+1) \binom{2r}{r} \sum_{d \geq 2r+1}^{m} \coeffA{m}{d} \binom{d}{2r+1} \frac{(-1)^{d-1}}{d-r}
+            \bernoulli{2d-2r} & \mathrm{if} \; 0 \leq r<m \\
+            0 & \mathrm{if} \; r<0 \; \mathrm{or} \; r>m
+        \end{cases}
+    \end{align*}
+\end{definition}
+where $\bernoulli{t}$ are Bernoulli numbers~\cite{bateman1953higher}.
+It is assumed that $\bernoulli{1}=\frac{1}{2}$.
+Properties of the coefficients $\coeffA{m}{r}$
+\begin{itemize}
+    \item $\coeffA{m}{m} = (2m+1) \binom{2m}{m}$
+    \item $\coeffA{m}{r} = 0$ for $m < 0$ and $r > m$
+    \item $\coeffA{m}{r} = 0$ for $r < 0$
+    \item $\coeffA{m}{r} = 0$ for $\frac{m}{2} \leq r < m$
+    \item $\coeffA{m}{0} = 1$ for $m \geq 0$
+    \item $\coeffA{m}{r}$ are integers for $m \leq 11$
+    \item Row sums: $\sum_{r=0}^{m} \coeffA{m}{r} = 2^{2m+1} - 1$
+\end{itemize}
+
+Proof of conjecture~\eqref{conj:generalization} as well as other discussions on topics above can be found
+in literature~\cite{alekseyev2018mathoverflow, kolosov2024history, kolosov2016link, kolosov2022_an_unusual_identity, kolosov2023polynomial}.
+Few OEIS sequences were contributed as well~\cite{oeis_kolosov2017third, oeis_kolosov2018fifth,
+    oeis_kolosov2018coefficientspolynomial3, oeis_kolosov2018coefficientspolynomial2,
+    oeis_kolosov2018coefficientspolynomial1}.
+
+Very well, let's wrap up this technical section and move on to the more engaging discussions.
