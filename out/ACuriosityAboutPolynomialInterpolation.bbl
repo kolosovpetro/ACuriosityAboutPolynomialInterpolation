@@ -98,4 +98,16 @@ Petro Kolosov.
   identity, 2018.
 \newblock \url{https://oeis.org/A320047}.
 
+\bibitem{oeis_sloane2015triangular}
+{Sloane, N. J. A.}
+\newblock {Triangular numbers. Entry A000217 in The On-Line Encyclopedia of
+  Integer Sequences}, 2015.
+\newblock \url{https://oeis.org/A000217}.
+
+\bibitem{oeis_sloane2010pentagonal}
+{Sloane, N. J. A.}
+\newblock {Pentagonal numbers. Entry A000326 in The On-Line Encyclopedia of
+  Integer Sequences}, 2010.
+\newblock \url{https://oeis.org/A000326}.
+
 \end{thebibliography}

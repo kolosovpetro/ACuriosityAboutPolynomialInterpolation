@@ -16,3 +16,6 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Remove Azure pipelines YAML builds
 - Update bibliography
 - Update title and file names
+- Add metadata
+- Add discussions
+- Add references
